@@ -8,10 +8,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @keyframes pulse-orb {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(147, 51, 234, 0.3); }
-            50% { transform: scale(1.08); box-shadow: 0 0 45px rgba(59, 130, 246, 0.8), 0 0 80px rgba(147, 51, 234, 0.6); }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(236, 72, 153, 0.5), 0 0 50px rgba(147, 51, 234, 0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 0 45px rgba(236, 72, 153, 0.8), 0 0 80px rgba(147, 51, 234, 0.7); }
         }
-        .animate-orb { animation: pulse-orb 2.5s infinite ease-in-out; }
+        .animate-orb { animation: pulse-orb 2.2s infinite ease-in-out; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between items-center p-4 font-sans select-none">
@@ -19,12 +19,12 @@
     <!-- Header -->
     <header class="w-full max-w-md flex justify-between items-center py-3 border-b border-slate-800">
         <div>
-            <h1 class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
                 NOVA AI
             </h1>
             <p class="text-[10px] text-slate-400">Developed by Tanim • Made by Tanim</p>
         </div>
-        <button id="key-btn" class="text-xs bg-slate-900 border border-slate-700 hover:border-purple-500 px-3 py-1.5 rounded-full text-purple-300 transition">
+        <button id="key-btn" class="text-xs bg-slate-900 border border-slate-700 hover:border-pink-500 px-3 py-1.5 rounded-full text-pink-300 transition">
             <i class="fa-solid fa-key mr-1"></i> API Key
         </button>
     </header>
@@ -35,13 +35,13 @@
         <!-- Status Indicator -->
         <div id="status-badge" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 flex items-center space-x-2">
             <span id="status-dot" class="w-2.5 h-2.5 rounded-full bg-gray-500"></span>
-            <span id="status-text">TAP ORB TO START</span>
+            <span id="status-text">TOUCH ORB TO TALK</span>
         </div>
 
         <!-- Central Glowing Orb Button -->
-        <button id="orb-btn" class="w-44 h-44 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 p-1 animate-orb flex items-center justify-center transition active:scale-95 shadow-2xl">
-            <div class="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center space-y-2 border border-indigo-500/30">
-                <i id="mic-icon" class="fa-solid fa-microphone-slash text-4xl text-indigo-400"></i>
+        <button id="orb-btn" class="w-44 h-44 rounded-full bg-gradient-to-tr from-pink-500 via-purple-600 to-indigo-600 p-1 animate-orb flex items-center justify-center transition active:scale-95 shadow-2xl">
+            <div class="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center space-y-2 border border-pink-500/30">
+                <i id="mic-icon" class="fa-solid fa-microphone-slash text-4xl text-pink-400"></i>
                 <span id="orb-subtext" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">OFFLINE</span>
             </div>
         </button>
@@ -49,26 +49,26 @@
         <!-- Live Transcript / Output Text -->
         <div class="w-full bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 min-h-[90px] text-center flex flex-col justify-center">
             <p id="transcript-text" class="text-sm font-medium text-slate-300 italic">
-                "Tap the glowing orb and speak to NOVA..."
+                "Touch the orb and talk to me..."
             </p>
-        </div>
+ tch    </div>
 
     </main>
 
     <!-- Footer -->
     <footer class="text-xs text-slate-500 text-center pb-2">
-        NOVA Assistant • Developed by Tanim Made by Tanim
+        NOVA Sweet Assistant • Developed by Tanim Made by Tanim
     </footer>
 
     <!-- API Key Modal -->
     <div id="api-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-        <div class="bg-slate-900 border border-indigo-500/30 p-6 rounded-2xl w-full max-w-sm space-y-4 shadow-2xl">
-            <h3 class="text-lg font-bold text-indigo-300">Set Gemini API Key</h3>
-            <p class="text-xs text-slate-400">Enter your Google Gemini API Key below. It will be stored locally in your browser.</p>
-            <input type="password" id="api-key-input" placeholder="AIzaSy..." class="w-full bg-slate-950 border border-slate-700 px-3 py-2 rounded-lg text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+        <div class="bg-slate-900 border border-pink-500/30 p-6 rounded-2xl w-full max-w-sm space-y-4 shadow-2xl">
+            <h3 class="text-lg font-bold text-pink-300">Set Gemini API Key</h3>
+            <p class="text-xs text-slate-400">Enter your Google Gemini API Key below for sweet AI conversations.</p>
+            <input type="password" id="api-key-input" placeholder="AIzaSy..." class="w-full bg-slate-950 border border-slate-700 px-3 py-2 rounded-lg text-sm text-slate-100 focus:outline-none focus:border-pink-500">
             <div class="flex justify-end space-x-2">
                 <button id="close-modal" class="px-4 py-2 text-xs text-slate-400 hover:text-white">Cancel</button>
-                <button id="save-key" class="px-4 py-2 text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg">Save Key</button>
+                <button id="save-key" class="px-4 py-2 text-xs bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-lg">Save Key</button>
             </div>
         </div>
     </div>
@@ -81,7 +81,6 @@
             synthesis: window.speechSynthesis
         };
 
-        // DOM Elements
         const orbBtn = document.getElementById('orb-btn');
         const micIcon = document.getElementById('mic-icon');
         const orbSubtext = document.getElementById('orb-subtext');
@@ -94,17 +93,15 @@
         const saveKey = document.getElementById('save-key');
         const closeModal = document.getElementById('close-modal');
 
-        // Modal Handlers
         keyBtn.addEventListener('click', () => { apiKeyInput.value = state.apiKey; apiModal.classList.remove('hidden'); });
         closeModal.addEventListener('click', () => apiModal.classList.add('hidden'));
         saveKey.addEventListener('click', () => {
             state.apiKey = apiKeyInput.value.trim();
             localStorage.setItem('NOVA_GEMINI_KEY', state.apiKey);
             apiModal.classList.add('hidden');
-            if (state.apiKey) speakText("API Key saved. I am ready!");
+            if (state.apiKey) speakText("API Key saved! I am all yours now.");
         });
 
-        // Speech Recognition Setup
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
         if (SpeechRecognition) {
@@ -125,9 +122,8 @@
             };
 
             state.recognition.onerror = (e) => {
-                console.error(e.error);
                 if (e.error !== 'no-speech') {
-                    transcriptText.innerText = "Listening error. Tap orb again.";
+                    transcriptText.innerText = "I missed that. Tap the orb and talk to me again!";
                     stopListening();
                 }
             };
@@ -136,32 +132,28 @@
                 if (state.isListening) {
                     try { state.recognition.start(); } catch(err){}
                 } else {
-                    updateStatus('OFFLINE', 'bg-gray-500', 'fa-microphone-slash text-indigo-400', 'OFFLINE');
+                    updateStatus('OFFLINE', 'bg-gray-500', 'fa-microphone-slash text-pink-400', 'OFFLINE');
                 }
             };
         } else {
-            transcriptText.innerText = "Speech Recognition not supported on this browser. Try Chrome for Android.";
+            transcriptText.innerText = "Speech Recognition not supported. Please use Google Chrome.";
         }
 
         function startListening() {
             if (!state.recognition) return;
-            try {
-                state.recognition.start();
-            } catch(e) {
-                console.log(e);
-            }
+            try { state.recognition.start(); } catch(e){}
         }
 
         function stopListening() {
             state.isListening = false;
             if (state.recognition) state.recognition.stop();
-            updateStatus('OFFLINE', 'bg-gray-500', 'fa-microphone-slash text-indigo-400', 'OFFLINE');
+            updateStatus('OFFLINE', 'bg-gray-500', 'fa-microphone-slash text-pink-400', 'OFFLINE');
         }
 
         orbBtn.addEventListener('click', () => {
             if (!state.isListening) {
                 startListening();
-                speakText("Yes? I am listening.");
+                speakText("Hey there! I am listening to you.");
             } else {
                 stopListening();
             }
@@ -174,43 +166,102 @@
             orbSubtext.innerText = subtext;
         }
 
-        // Handle Web Commands & Gemini AI Response
+        // Dynamic Voice Command Processing Engine
         async function handleUserCommand(command) {
             const lower = command.toLowerCase();
 
-            // Quick Browser Action Tools
-            if (lower.includes('open youtube')) {
-                speakText("Opening YouTube for you.");
-                window.open('https://www.youtube.com', '_blank');
+            // 1. Dynamic YouTube Search (Searches EXACTLY whatever user says)
+            if (lower.includes('youtube') && (lower.includes('search') || lower.includes('find') || lower.includes('play') || lower.includes('open'))) {
+                let query = lower.replace(/search|youtube|for|find|play|open/g, '').trim();
+                if (query.length > 0) {
+                    speakText(`Searching YouTube for ${query} for you, sweetie!`);
+                    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`, '_blank');
+                } else {
+                    speakText("Opening YouTube for you!");
+                    window.open('https://www.youtube.com', '_blank');
+                }
                 return;
             }
-            if (lower.includes('open tiktok')) {
-                speakText("Opening TikTok.");
+
+            // 2. Dynamic Web / Google Search (Searches ANY topic specified)
+            if (lower.includes('google') || lower.includes('search') || lower.includes('find') || lower.includes('look up')) {
+                let query = lower.replace(/search|google|for|find|look up|in google|on google/g, '').trim();
+                if (query.length > 0) {
+                    speakText(`Searching Google for ${query}`);
+                    window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+                    return;
+                }
+            }
+
+            // 3. Social Media Tools
+            if (lower.includes('tiktok')) {
+                speakText("Opening TikTok for you!");
                 window.open('https://www.tiktok.com', '_blank');
                 return;
             }
-            if (lower.includes('open facebook')) {
-                speakText("Opening Facebook.");
+            if (lower.includes('facebook')) {
+                speakText("Opening Facebook!");
                 window.open('https://www.facebook.com', '_blank');
                 return;
             }
 
-            // Send to Gemini AI if API Key exists
+            // 4. Sweet Conversational AI (Gemini Flash)
             if (state.apiKey) {
-                updateStatus('THINKING', 'bg-yellow-400 animate-ping', 'fa-brain text-yellow-400', 'THINKING');
+                updateStatus('THINKING', 'bg-pink-400 animate-ping', 'fa-heart text-pink-400', 'THINKING');
                 const reply = await callGemini(command);
                 speakText(reply);
                 updateStatus('LISTENING', 'bg-emerald-400 animate-pulse', 'fa-microphone text-emerald-400', 'LISTENING');
             } else {
-                speakText("Please set your Gemini API Key first to chat with me.");
+                speakText("Please add your Gemini API Key so I can talk sweetly with you!");
                 apiModal.classList.remove('hidden');
             }
         }
 
-        // Gemini REST API Call
+        // Gemini REST API Call (Sweet Female Persona Prompt)
         async function callGemini(prompt) {
             try {
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${state.apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{ 
+                                text: `You are NOVA, a smart, caring, sweet, and witty AI female companion created by Tanim. Speak in a very warm, affectionate, natural, girlfriend-like sweet tone. Keep responses short (1-2 sentences), sweet, and human-like. User said: ${prompt}` 
+                            }]
+                        }]
+                    })
+                });
+                const data = await response.json();
+                if (data.candidates && data.candidates[0].content.parts[0].text) {
+                    return data.candidates[0].content.parts[0].text;
+                }
+                return "I didn't catch that properly, say it again please!";
+            } catch (err) {
+                return "Network connection issue. Please check your internet or API key.";
+            }
+        }
+
+        // Sweet Voice Synthesis
+        function speakText(text) {
+            if (!state.synthesis) return;
+            state.synthesis.cancel();
+            transcriptText.innerText = `NOVA: "${text}"`;
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.pitch = 1.25; // Sweet female pitch
+            utterance.rate = 0.95;  // Natural speaking rate
+            
+            const voices = state.synthesis.getVoices();
+            // Search for best sweet female natural voice in browser
+            const femaleVoice = voices.find(v => v.lang.includes('en') && (v.name.includes('Female') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Natural')));
+            if (femaleVoice) utterance.voice = femaleVoice;
+
+            state.synthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
+tch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${state.apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
