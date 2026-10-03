@@ -1,0 +1,6 @@
+{
+  "name": "NOVA",
+  "description": "NOVA - Premium Artificial Intelligence Voice Assistant by Tanim",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
